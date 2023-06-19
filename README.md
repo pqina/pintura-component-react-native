@@ -11,5 +11,7 @@ After installing the module will inline the Pintura scripts and styles in a Pint
 React Native example projects:
 
 -   https://github.com/pqina/pintura-example-react-native
+-   https://github.com/pqina/pintura-example-react-native-expo
+-   https://github.com/pqina/pintura-example-react-native-typescript-expo
 
 Visit https://pqina.nl/pintura for more details.

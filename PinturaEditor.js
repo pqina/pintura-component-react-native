@@ -1,9 +1,34 @@
 import { WebView } from 'react-native-webview';
-import { View, Platform } from 'react-native';
+import { View, Platform, Image } from 'react-native';
 import React, { forwardRef, useRef, useState, useEffect } from 'react';
-import { Asset } from 'expo-asset';
+import PinturaProxy from './bin/pintura.html';
 
 const upperCaseFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+export const localFileToDataURL = (url) =>
+    new Promise((resolve, reject) => {
+        // url to blob
+        fetch(url)
+            .then((res) => res.blob())
+            .then((blob) => {
+                // if mimetype missing fix
+                if (!blob.type) {
+                    const [path, _] = url.split('?');
+                    const ext = path.split('.').pop();
+                    blob = new Blob([blob], {
+                        type: 'image/' + ext,
+                        lastModified: Date.now(),
+                    });
+                }
+
+                // convert to dataURL
+                const fr = new FileReader();
+                fr.onload = () => resolve(fr.result);
+                fr.onerror = () => reject(fr.error);
+                fr.readAsDataURL(blob);
+            })
+            .catch(reject);
+    });
 
 // This allows passing functions to webview
 const getFunctionParts = (fn) => {
@@ -82,14 +107,18 @@ const Editor = forwardRef((props, ref) => {
 
     // load editor template
     useEffect(() => {
-        const template = require('./bin/pintura.html'); // eslint-disable-line no-undef
-        Platform.OS === 'android'
-            ? Asset.loadAsync(template).then(([{ localUri }]) => {
-                  setSource({
-                      uri: localUri,
-                  });
-              })
-            : setSource(template);
+        if (Platform.OS === 'android') {
+            async function getProxyTemplate() {
+                await fetch(Image.resolveAssetSource(PinturaProxy).uri)
+                    .then((res) => res.text())
+                    .then((html) => {
+                        setSource({ html });
+                    });
+            }
+            getProxyTemplate();
+        } else {
+            setSource(PinturaProxy);
+        }
     }, []);
 
     return (
