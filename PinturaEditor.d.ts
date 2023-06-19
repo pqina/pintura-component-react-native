@@ -69,3 +69,5 @@ class PinturaEditor extends React.Component<
 }
 
 export default PinturaEditor;
+
+export const localFileToDataURL: (url: string) => Promise<string>;

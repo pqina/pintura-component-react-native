@@ -1,6 +1,6 @@
 # Pintura React Native Component
 
-This package exports a React Native component to make it easier to use Pintura with React Native and Expo.
+This package exports a Pintura WebView wrapper component to make it easier to use Pintura with React Native (compatible with Expo).
 
 ```
 npm install @pqina/react-native-pintura

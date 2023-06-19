@@ -1,6 +1,10 @@
 # Changelog
 
-## 9.0.# | 2023-06-19
+## 9.0.4 | 2023-06-19
+
+-   Fix missing export in TypeScript declaration file.
+
+## 9.0.3 | 2023-06-19
 
 -   Remove Expo asset module dependency.
 

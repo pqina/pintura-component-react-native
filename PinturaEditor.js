@@ -5,6 +5,7 @@ import PinturaProxy from './bin/pintura.html';
 
 const upperCaseFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
+// Converts a local file to a DataURL so there's no rights issue when loading the image
 export const localFileToDataURL = (url) =>
     new Promise((resolve, reject) => {
         // url to blob
