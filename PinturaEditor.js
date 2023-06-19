@@ -48,7 +48,7 @@ const parseMessage = (str) => deepReplaceValues(JSON.parse(str), replaceValues);
 /* eslint-disable @typescript-eslint/no-var-requires */
 const Editor = forwardRef((props, ref) => {
     const { style, styleRules, ...options } = props;
-    const [source, setSource] = useState(undefined);
+    const [source, setSource] = useState({});
     const webViewRef = useRef(null);
 
     // this sets up proxy so we can call functions on the editor instance
@@ -93,10 +93,10 @@ const Editor = forwardRef((props, ref) => {
     }, []);
 
     return (
-        <View ref={ref} style={style}>
+        <View ref={ref} style={{ ...style, backgroundColor: 'transparent' }}>
             <WebView
                 ref={webViewRef}
-                style={{ width: '100%', height: '100%' }}
+                style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
                 javaScriptEnabled={true}
                 scrollEnabled={false}
                 domStorageEnabled={true}
