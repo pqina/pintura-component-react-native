@@ -1,6 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 
+// source template name
+const src = 'pintura.html';
+
 // need to have a reference to the root of the project so we can find npm modules
 const projectRoot = process.env.INIT_CWD;
 
@@ -41,13 +44,12 @@ const contentsPinturaVideoCSS = fs.existsSync(pathPinturaVideoCSS)
     : undefined;
 
 // read component file
-const src = 'pintura.html';
-const dest = path.join('bin', 'pintura.html');
+const dest = path.join('bin', src);
 
 if (!fs.existsSync('bin')) fs.mkdirSync('bin');
 
 // modify template
-let data = fs.readFileSync('pintura.html', { encoding: 'utf8' });
+let data = fs.readFileSync(src, { encoding: 'utf8' });
 
 // inject scripts and styles
 data = data.replace('/*__PINTURA_CSS__*/', () => contentsPinturaCSS);
@@ -115,9 +117,10 @@ if (msg.editorOptions.imageWriter || msg.editorOptions.videoWriter) {
         );
 }
 
-// write file
+// write file in bin
 fs.writeFileSync(dest, data, { encoding: 'utf8' });
 
-// copy component files to project root
-// fs.copyFileSync('PinturaEditor.js', path.join('bin', 'PinturaEditor.js'));
-// fs.copyFileSync('PinturaEditor.d.ts', path.join('bin', 'PinturaEditor.d.ts'));
+// copy template to android assets
+const androidAssets = path.join(projectRoot, 'android', 'app', 'src', 'main', 'assets');
+if (!fs.existsSync(androidAssets)) fs.mkdirSync(androidAssets);
+fs.copyFileSync(dest, path.join(androidAssets, src)); // overwrites target file

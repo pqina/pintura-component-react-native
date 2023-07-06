@@ -70,4 +70,7 @@ class PinturaEditor extends React.Component<
 
 export default PinturaEditor;
 
+/**
+ * @deprecated The method should not be used
+ */
 export const localFileToDataURL: (url: string) => Promise<string>;

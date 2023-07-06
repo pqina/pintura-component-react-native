@@ -1,10 +1,11 @@
 import { WebView } from 'react-native-webview';
-import { View, Platform, Image } from 'react-native';
+import { View, Platform } from 'react-native';
 import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import PinturaProxy from './bin/pintura.html';
 
 const upperCaseFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
+// @deprecated
 // Converts a local file to a DataURL so there's no rights issue when loading the image
 export const localFileToDataURL = (url) =>
     new Promise((resolve, reject) => {
@@ -94,33 +95,26 @@ const Editor = forwardRef((props, ref) => {
         };
 
         ref.current.editor = new Proxy({}, handler); // eslint-disable-line no-undef
-    }, []);
+    }, [webViewRef, ref]);
 
     // this passes options to the editor
     useEffect(() => {
         webViewRef.current.postMessage(stringifyMessage({ editorOptions: options }));
-    });
+    }, [options]);
 
     // this passes style rules to the editor
     useEffect(() => {
         webViewRef.current.postMessage(stringifyMessage({ editorStyleRules: styleRules }));
-    });
+    }, [styleRules]);
 
     // load editor template
     useEffect(() => {
         if (Platform.OS === 'android') {
-            async function getProxyTemplate() {
-                await fetch(Image.resolveAssetSource(PinturaProxy).uri)
-                    .then((res) => res.text())
-                    .then((html) => {
-                        setSource({ html });
-                    });
-            }
-            getProxyTemplate();
+            setSource({ uri: 'file:///android_asset/pintura.html' });
         } else {
             setSource(PinturaProxy);
         }
-    }, []);
+    });
 
     return (
         <View ref={ref} style={{ ...style, backgroundColor: 'transparent' }}>

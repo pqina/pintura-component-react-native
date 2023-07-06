@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.5 | 2023-07-06
+
+-   Fix Pintura not loading in Android release mode.
+
 ## 9.0.4 | 2023-06-19
 
 -   Fix missing export in TypeScript declaration file.
