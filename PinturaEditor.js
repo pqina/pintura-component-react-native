@@ -95,17 +95,17 @@ const Editor = forwardRef((props, ref) => {
         };
 
         ref.current.editor = new Proxy({}, handler); // eslint-disable-line no-undef
-    }, [webViewRef, ref]);
+    });
 
     // this passes options to the editor
     useEffect(() => {
         webViewRef.current.postMessage(stringifyMessage({ editorOptions: options }));
-    }, [options]);
+    });
 
     // this passes style rules to the editor
     useEffect(() => {
         webViewRef.current.postMessage(stringifyMessage({ editorStyleRules: styleRules }));
-    }, [styleRules]);
+    });
 
     // load editor template
     useEffect(() => {

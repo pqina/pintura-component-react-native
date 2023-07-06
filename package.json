@@ -1,6 +1,6 @@
 {
     "name": "@pqina/react-native-pintura",
-    "version": "9.0.5",
+    "version": "9.0.6",
     "description": "Pintura Image Editor Components for use with React Native (compatible with Expo)",
     "author": "Rik Schennink at PQINA",
     "homepage": "https://pqina.nl/pintura/",
@@ -14,8 +14,8 @@
         "@pqina/pintura": "8.x"
     },
     "peerDependencies": {
-        "react": "^18.x",
+        "react": ">=18.x",
         "react-native": "^0.x",
-        "react-native-webview": "^11.x"
+        "react-native-webview": ">=11"
     }
 }

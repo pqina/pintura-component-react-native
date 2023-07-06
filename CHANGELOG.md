@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.0.6 | 2023-07-07
+
+-   Fix peerDependencies being too strict.
+-   Remove `useEffect` dependencies.
+
 ## 9.0.5 | 2023-07-06
 
 -   Fix Pintura not loading in Android release mode.
