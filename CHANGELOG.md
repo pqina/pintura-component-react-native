@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.7 | 2023-07-07
+
+-   Fix `useEffect` dependencies.
+
 ## 9.0.6 | 2023-07-07
 
 -   Fix peerDependencies being too strict.
