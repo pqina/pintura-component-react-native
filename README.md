@@ -13,6 +13,8 @@ Post install the Pintura React Native component does two things:
 
 The install script can be run again by calling `npm rebuild` which is needed after updating `@pqina/pintura` or `@pqina/pintura-video`
 
+## Examples
+
 React Native example projects:
 -   https://github.com/pqina/pintura-example-react-native
 
@@ -23,3 +25,9 @@ React Native Expo example projects:
 -   https://github.com/pqina/pintura-example-react-native-typescript-expo
 
 Visit https://pqina.nl/pintura for more details.
+
+## License
+
+This projects uses a test version of Pintura. This version of Pintura will show a watermark in the editor and on generated images.
+
+Purchase a license at https://pqina.nl/pintura to use Pintura in production.
