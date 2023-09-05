@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.8 | 2023-09-05
+
+-   Allow passing `markupEditorShapeStyleControls` as options object.
+
 ## 9.0.7 | 2023-07-07
 
 -   Fix `useEffect` dependencies.
