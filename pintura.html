@@ -91,10 +91,14 @@
             // Converts an event object entry to a property (basically encodes any Blob values)
             const toMessageProp = ([key, value]) =>
                 new Promise((resolve) => {
+                    // is a blob
                     if (value instanceof Blob) {
+                        /*__WEBM_DURATION_FIX_APPLY__*/
                         toDateURI(value).then((str) => resolve([key, str]));
                         return;
                     }
+
+                    // not a blob
                     resolve([key, value]);
                 });
 
@@ -253,6 +257,8 @@
             /*__PINTURA_JS__*/
 
             /*__PINTURA_VIDEO_JS__*/
+
+            /*__WEBM_DURATION_FIX_JS__*/
         </script>
     </body>
 </html>

@@ -16,11 +16,15 @@ The install script can be run again by calling `npm rebuild` which is needed aft
 ## Examples
 
 React Native example projects:
+
 -   https://github.com/pqina/pintura-example-react-native
 
-React Native Expo version of the component: https://github.com/pqina/pintura-component-react-native-expo/
+React Native Expo version of the component:
+
+-   https://github.com/pqina/pintura-component-react-native-expo/
 
 React Native Expo example projects:
+
 -   https://github.com/pqina/pintura-example-react-native-expo
 -   https://github.com/pqina/pintura-example-react-native-typescript-expo
 
@@ -31,3 +35,5 @@ Visit https://pqina.nl/pintura for more details.
 This projects uses a test version of Pintura. This version of Pintura will show a watermark in the editor and on generated images.
 
 Purchase a license at https://pqina.nl/pintura to use Pintura in production.
+
+Makes use of [webm-duration-fix](https://github.com/buynao/webm-duration-fix) to fix webm video duration on Chrome
