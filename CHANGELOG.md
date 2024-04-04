@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.9 | 2024-04-04
+
+-   Automatically fix chrome webm duration bug.
+
 ## 9.0.8 | 2023-09-05
 
 -   Allow passing `markupEditorShapeStyleControls` as options object.
