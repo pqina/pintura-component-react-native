@@ -60,6 +60,21 @@ class PinturaEditor extends React.Component<
         /** CSS styles passed to editor webview */
         styleRules?: string;
 
+        /** videoWriter options */
+        videoWriter?: {
+            muxerEncoder?: {
+                videoBitrate?: number;
+                audioBitrate?: number;
+                log?: boolean;
+            };
+            mediaStreamEncoder?: {
+                framesPerSecond?: number;
+                videoBitrate?: number;
+                audioBitrate?: number;
+                log?: boolean;
+            };
+        };
+
         // readonly ref?: MutableRefObject<PinturaEditorRef>;
     } & PinturaEditorDefaultOptions &
         PinturaComponentEvents,

@@ -1,6 +1,6 @@
 {
     "name": "@pqina/react-native-pintura",
-    "version": "9.0.9",
+    "version": "9.0.10",
     "description": "Pintura Image Editor Components for use with React Native",
     "author": "Rik Schennink at PQINA",
     "homepage": "https://pqina.nl/pintura/",
@@ -16,6 +16,16 @@
     "peerDependencies": {
         "react": ">=18.x",
         "react-native": "^0.x",
-        "react-native-webview": ">=11"
+        "react-native-webview": ">=11",
+        "webm-muxer": "4.0.1",
+        "mp4-muxer": "4.0.1"
+    },
+    "peerDependenciesMeta": {
+        "webm-muxer": {
+            "optional": true
+        },
+        "mp4-muxer": {
+            "optional": true
+        }
     }
 }

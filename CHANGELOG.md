@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.0.10 | 2024-04-10
+
+-   Remove Chrome webm duration fix as it didn't work consistently.
+-   When `webm-muxer` or `mp4-muxer` node module is installed they will automatically be loaded as muxer encoder.
+
 ## 9.0.9 | 2024-04-04
 
 -   Automatically fix chrome webm duration bug.

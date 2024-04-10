@@ -93,7 +93,6 @@
                 new Promise((resolve) => {
                     // is a blob
                     if (value instanceof Blob) {
-                        /*__WEBM_DURATION_FIX_APPLY__*/
                         toDateURI(value).then((str) => resolve([key, str]));
                         return;
                     }
@@ -258,7 +257,7 @@
 
             /*__PINTURA_VIDEO_JS__*/
 
-            /*__WEBM_DURATION_FIX_JS__*/
+            /*__VIDEO_MUXER_JS__*/
         </script>
     </body>
 </html>
