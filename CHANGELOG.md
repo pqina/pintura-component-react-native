@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.11 | 2024-08-12
+
+-   Fix issue where updating state would cause editor markup settings to be reset.
+
 ## 9.0.10 | 2024-04-10
 
 -   Remove Chrome webm duration fix as it didn't work consistently.
