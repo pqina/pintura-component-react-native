@@ -104,7 +104,7 @@ const Editor = forwardRef((props, ref) => {
     useEffect(() => {
         const editorOptions = {};
 
-        for (key of Object.keys(options)) {
+        for (const key of Object.keys(options)) {
             const currentValue = propMap.get(key);
             const newValue = options[key];
 
